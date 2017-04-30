@@ -4,7 +4,7 @@ Provides video uploading functionality
 
 - Displays the upload field in the content display (displays nothing in the form display)
 
-- Renames the video file name, (Wistia field=Name) to match the originating Drupal node id, before uploading the video to Wistia
+- Renames the video file name in the Wistia account to match the originating Drupal node id, before uploading the video to Wistia
 
 - Works with blocks
 
