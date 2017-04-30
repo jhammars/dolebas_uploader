@@ -1,1 +1,1 @@
-# wistia_video_field
+Provides video uploading functionality
