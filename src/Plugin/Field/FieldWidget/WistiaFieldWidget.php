@@ -70,6 +70,9 @@ class WistiaFieldWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
+    $config = \Drupal::config('wistia_video_field.wistiasettings');
+    $token = $config->get('wistia_token');
+
     $element['video_id'] = $element + [
       '#type' => 'textfield',
       '#default_value' => isset($items[$delta]->video_id) ? $items[$delta]->video_id : NULL,
