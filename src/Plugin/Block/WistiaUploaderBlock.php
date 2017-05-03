@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\dolebas_custom\Plugin\Block;
+namespace Drupal\wistia_video_field\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
