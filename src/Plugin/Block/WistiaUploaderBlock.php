@@ -59,6 +59,7 @@ class WistiaUploaderBlock extends BlockBase implements ContainerFactoryPluginInt
   public function build() {
     $config = \Drupal::config('wistia_video_field.wistiasettings');
     $token = $config->get('wistia_token');
+    $project_id = $config->get('wistia_project_id');
 
     //'https:/we/api.wistia.com/v1/medias.json?api_password=' . $token;
     // $client = \Drupal::httpClient();
@@ -83,7 +84,8 @@ class WistiaUploaderBlock extends BlockBase implements ContainerFactoryPluginInt
       ),
       'drupalSettings' => array(
         'nid' => $nid,
-        'token' => $token
+        'token' => $token,
+        'project_id' => $project_id
       )
     );
     $build['#cache']['max-age'] = 0;
