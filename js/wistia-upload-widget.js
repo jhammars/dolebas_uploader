@@ -6,7 +6,7 @@
                 window.wistiaUploader = new W.Uploader({
                     accessToken: settings.token,
                     dropIn: "wistia_uploader",
-                    projectId: "bifsh58lcq",
+                    projectId: settings.project_id,
                     beforeUpload: function() {
                         wistiaUploader.setFileName(settings.nid);
                         //wistiaUploader.setFileDescription('the description');

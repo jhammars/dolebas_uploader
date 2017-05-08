@@ -41,6 +41,15 @@ class WistiaSettingsForm extends ConfigFormBase {
       '#size' => 64,
       '#default_value' => $config->get('wistia_token'),
     ];
+    $form['wistia_project_id'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Wistia Project Id'),
+      '#description' => $this->t('Get wistia Project Id from your wistia account.'),
+      '#maxlength' => 512,
+      '#size' => 64,
+      '#default_value' => $config->get('wistia_project_id'),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -59,6 +68,7 @@ class WistiaSettingsForm extends ConfigFormBase {
 
     $this->config('wistia_video_field.wistiasettings')
       ->set('wistia_token', $form_state->getValue('wistia_token'))
+      ->set('wistia_project_id', $form_state->getValue('wistia_project_id'))
       ->save();
   }
 
