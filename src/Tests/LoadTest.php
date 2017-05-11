@@ -8,7 +8,7 @@ use Drupal\simpletest\WebTestBase;
 /**
  * Simple test to ensure that main page loads with module enabled.
  *
- * @group wistia_video_field
+ * @group dolebas_uploader
  */
 class LoadTest extends WebTestBase{
 
@@ -17,7 +17,7 @@ class LoadTest extends WebTestBase{
    *
    * @var array
    */
-  public static $modules = ['wistia_video_field'];
+  public static $modules = ['dolebas_uploader'];
 
   /**
    * A user with permission to administer site configuration.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\wistia_video_field\Plugin\Block;
+namespace Drupal\dolebas_uploader\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -8,14 +8,14 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManager;
 
 /**
- * Provides a 'WistiaUploaderBlock' block.
+ * Provides a 'DolebasUploaderBlock' block.
  *
  * @Block(
- *  id = "wistia_uploader_block",
- *  admin_label = @Translation("Wistia uploader block"),
+ *  id = "dolebas_uploader_block",
+ *  admin_label = @Translation("Dolebas uploader block"),
  * )
  */
-class WistiaUploaderBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class DolebasUploaderBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * Drupal\Core\Entity\EntityTypeManager definition.
@@ -57,7 +57,7 @@ class WistiaUploaderBlock extends BlockBase implements ContainerFactoryPluginInt
    * {@inheritdoc}
    */
   public function build() {
-    $config = \Drupal::config('wistia_video_field.wistiasettings');
+    $config = \Drupal::config('dolebas_uploader.settings');
     $token = $config->get('wistia_token');
     $project_id = $config->get('wistia_project_id');
 
@@ -68,7 +68,7 @@ class WistiaUploaderBlock extends BlockBase implements ContainerFactoryPluginInt
     // $request = $client->get($url);
     // $response = $request->getBody();
     // $response = $client->send($request);
-    // print '<pre>';print_r($response);exit;
+    //print '<pre>';print_r($project_id);exit;
     // print '<pre>';print_r($url);exit;
 
     $node = \Drupal::routeMatch()->getParameter('node');
@@ -76,11 +76,11 @@ class WistiaUploaderBlock extends BlockBase implements ContainerFactoryPluginInt
       $nid = $node->id();
     }
     $build = [];
-    $build['wistia_uploader_block']['#type'] = 'inline_template';
-    $build['wistia_uploader_block']['#theme'] = 'wistia_video_field';
-    $build['wistia_uploader_block']['#attached'] = array(
+    $build['dolebas_uploader_block']['#type'] = 'inline_template';
+    $build['dolebas_uploader_block']['#theme'] = 'dolebas_uploader';
+    $build['dolebas_uploader_block']['#attached'] = array(
       'library' => array(
-        'wistia_video_field/wistia-library'
+        'dolebas_uploader/dolebas-library'
       ),
       'drupalSettings' => array(
         'nid' => $nid,
