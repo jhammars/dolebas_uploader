@@ -1,0 +1,6 @@
+dolebas_uploader.admin:
+  title: 'Uploader Settings'
+  description: 'Enter token and other settings for wistia video field module.'
+  route_name: dolebas_uploader.settings_form
+  parent: system.admin_config
+  weight: 100

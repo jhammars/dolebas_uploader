@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\wistia_video_field\Form;
+namespace Drupal\dolebas_uploader\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -8,16 +8,16 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Class WistiaSettingsForm.
  *
- * @package Drupal\wistia_video_field\Form
+ * @package Drupal\dolebas_uploader\Form
  */
-class WistiaSettingsForm extends ConfigFormBase {
+class UploaderSettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
    */
   protected function getEditableConfigNames() {
     return [
-      'wistia_video_field.wistiasettings',
+      'dolebas_uploader.settings',
     ];
   }
 
@@ -25,14 +25,14 @@ class WistiaSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'wistia_settings_form';
+    return 'dolebas_settings_form';
   }
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config('wistia_video_field.wistiasettings');
+    $config = $this->config('dolebas_uploader.settings');
     $form['wistia_token'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Wistia Token'),
@@ -66,7 +66,7 @@ class WistiaSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
 
-    $this->config('wistia_video_field.wistiasettings')
+    $this->config('dolebas_uploader.settings')
       ->set('wistia_token', $form_state->getValue('wistia_token'))
       ->set('wistia_project_id', $form_state->getValue('wistia_project_id'))
       ->save();

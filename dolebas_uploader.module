@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains wistia_video_field.module.
+ * Contains dolebas_uploader.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -10,10 +10,10 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function wistia_video_field_help($route_name, RouteMatchInterface $route_match) {
+function dolebas_uploader_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the wistia_video_field module.
-    case 'help.page.wistia_video_field':
+    // Main module help for the dolebas_uploader module.
+    case 'help.page.dolebas_uploader':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
       $output .= '<p>' . t('Wistia Video Field') . '</p>';
@@ -26,10 +26,10 @@ function wistia_video_field_help($route_name, RouteMatchInterface $route_match) 
 /**
  * Implements hook_theme().
  */
-function wistia_video_field_theme() {
+function dolebas_uploader_theme() {
   return [
-    'wistia_video_field' => [
-      'template' => 'wistia_video_field',
+    'dolebas_uploader' => [
+      'template' => 'dolebas_uploader',
       'render element' => 'children',
     ],
   ];

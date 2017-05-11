@@ -1,0 +1,8 @@
+name: Dolebas Upoader
+type: module
+description: Dolebas Upoader
+core: 8.x
+package: Custom
+configure: dolebas_uploader.settings_form
+libraries:
+  - dolebas_uploader/dolebas-library
