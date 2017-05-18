@@ -18,6 +18,15 @@ class CloudinaryUploaderBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+    $config = \Drupal::config('dolebas_uploader.cloudinarysettings');
+    $cloud_name = $config->get('cloud_name');
+    $upload_preset = $config->get('upload_preset');
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node) {
+      $nid = $node->id();
+    }
+
     $build['cloudinary_uploader_block']['#type'] = 'inline_template';
     $build['cloudinary_uploader_block']['#theme'] = 'cloudinary_uploader';
     $build['cloudinary_uploader_block']['#attached'] = array(
@@ -25,8 +34,9 @@ class CloudinaryUploaderBlock extends BlockBase {
         'dolebas_uploader/cloudinary-library'
       ),
       'drupalSettings' => array(
-        'cloud_name' => 'dolebas',
-        'upload_preset' => 'apexn91s',
+        'cloud_name' => $cloud_name,
+        'upload_preset' => $upload_preset,
+        'nid' => $nid,
       )
     );
 
