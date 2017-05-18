@@ -32,5 +32,9 @@ function dolebas_uploader_theme() {
       'template' => 'dolebas_uploader',
       'render element' => 'children',
     ],
+    'cloudinary_uploader' => [
+      'template' => 'cloudinary_uploader',
+      'render element' => 'children',
+    ],
   ];
 }
