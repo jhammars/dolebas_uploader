@@ -16,4 +16,4 @@ dolebas_uploader.cloudinary_settings_form:
     _title: 'CloudinarySettingsForm'
   requirements:
     _access: 'TRUE'
-  
+
