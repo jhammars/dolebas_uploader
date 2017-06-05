@@ -17,3 +17,10 @@ dolebas_uploader.cloudinary_settings_form:
   requirements:
     _access: 'TRUE'
 
+dolebas_uploader.publish_rename_node_controller_index:
+  path: '/ajax/publish-rename-node'
+  defaults:
+    _controller: '\Drupal\dolebas_uploader\Controller\PublishRenameNodeController::index'
+    _title: 'Publish rename node'
+  requirements:
+    _permission: 'access content'

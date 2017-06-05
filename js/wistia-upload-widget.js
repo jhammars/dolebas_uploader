@@ -15,6 +15,9 @@
                 wistiaUploader.bind("uploadsuccess", function(file, media) {
                     console.log("The upload succeeded. Here is the media object!", media);
                     $(".wistia-video-id").val(media.id);
+                    $.post("/videofilter/ajax/publish-rename-node", function( data ) {
+                        console.log(data);
+                    });
                 });
             });
         }
