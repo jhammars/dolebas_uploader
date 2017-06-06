@@ -14,12 +14,48 @@
                 });
                 wistiaUploader.bind("uploadsuccess", function(file, media) {
                     console.log("The upload succeeded. Here is the media object!", media);
-                    $(".wistia-video-id").val(media.id);
-                    $.post("/videofilter/ajax/publish-rename-node", function( data ) {
-                        console.log(data);
+                    getCsrfToken(function (csrfToken) {
+                        patchNode(csrfToken, 'ee23588c-3f34-4739-b63e-9ff4d9904674');
                     });
+                    //$(".wistia-video-id").val(media.id);
+                    //$.post("/videofilter/ajax/publish-rename-node", function( data ) {
+                    //    console.log(data);
+                    //});
                 });
             });
         }
     };
 })(jQuery, Drupal);
+
+function getCsrfToken(callback) {
+    jQuery
+    .get(Drupal.url('/session/token'))
+    .done(function (data) {
+        var csrfToken = data;
+        callback(csrfToken);
+    });
+}
+
+function patchNode(csrfToken, node) {
+    var body = {
+        "data": {
+            "id": csrfToken,
+            "attributes": {
+                "title": "video test"
+            }
+        }
+    };
+    jQuery.ajax({
+        url: 'http://localhost/videofilter/jsonapi/node/video/'+node+'?_format=json&token=' + csrfToken,
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/vnd.api+json',
+            'Accept': 'application/vnd.api+json',
+            'X-CSRF-Token': csrfToken
+        },
+        data: JSON.stringify(body),
+        success: function (body) {
+            console.log(body);
+        }
+    });
+}
