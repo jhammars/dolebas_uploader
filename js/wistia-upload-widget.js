@@ -39,9 +39,9 @@ function getCsrfToken(callback) {
 function patchNode(csrfToken, node) {
     var body = {
         "data": {
-            "id": csrfToken,
+            "id": node,
             "attributes": {
-                "title": "video test"
+                "title": "video chintan test"
             }
         }
     };
@@ -50,8 +50,7 @@ function patchNode(csrfToken, node) {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/vnd.api+json',
-            'Accept': 'application/vnd.api+json',
-            'X-CSRF-Token': csrfToken
+            'Accept': 'application/vnd.api+json'
         },
         data: JSON.stringify(body),
         success: function (body) {
