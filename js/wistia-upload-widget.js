@@ -15,12 +15,8 @@
                 wistiaUploader.bind("uploadsuccess", function(file, media) {
                     console.log("The upload succeeded. Here is the media object!", media);
                     getCsrfToken(function (csrfToken) {
-                        patchNode(csrfToken, 'ee23588c-3f34-4739-b63e-9ff4d9904674');
+                        patchNode(csrfToken, settings.uuid);
                     });
-                    //$(".wistia-video-id").val(media.id);
-                    //$.post("/videofilter/ajax/publish-rename-node", function( data ) {
-                    //    console.log(data);
-                    //});
                 });
             });
         }
@@ -41,7 +37,7 @@ function patchNode(csrfToken, node) {
         "data": {
             "id": node,
             "attributes": {
-                "title": "video chintan test"
+                "title": "video uploaded"
             }
         }
     };
