@@ -71,9 +71,13 @@ class DolebasUploaderBlock extends BlockBase implements ContainerFactoryPluginIn
     //print '<pre>';print_r($project_id);exit;
     // print '<pre>';print_r($url);exit;
 
+    /**
+     * @var $node \Drupal\node\NodeInterface
+     */
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node) {
       $nid = $node->id();
+      $uuid = $node->uuid();
     }
     $build = [];
     $build['dolebas_uploader_block']['#type'] = 'inline_template';
@@ -85,6 +89,7 @@ class DolebasUploaderBlock extends BlockBase implements ContainerFactoryPluginIn
       'drupalSettings' => array(
         'nid' => $nid,
         'token' => $token,
+        'uuid' => $uuid,
         'project_id' => $project_id
       )
     );
