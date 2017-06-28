@@ -49,6 +49,22 @@ class UploaderSettingsForm extends ConfigFormBase {
       '#size' => 64,
       '#default_value' => $config->get('wistia_project_id'),
     ];
+    $form['cloudinary_cloud_name'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Cloudinary Cloud Name'),
+      '#description' => $this->t('Enter cloud name from cloudinary account.'),
+      '#maxlength' => 64,
+      '#size' => 64,
+      '#default_value' => $config->get('cloudinary_cloud_name'),
+    ];
+    $form['cloudinary_upload_preset'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Cloudinary Upload Preset'),
+      '#description' => $this->t('Enter Upload preset from cloudinary.'),
+      '#maxlength' => 64,
+      '#size' => 64,
+      '#default_value' => $config->get('cloudinary_upload_preset'),
+    ];
 
     return parent::buildForm($form, $form_state);
   }
@@ -69,6 +85,8 @@ class UploaderSettingsForm extends ConfigFormBase {
     $this->config('dolebas_uploader.settings')
       ->set('wistia_token', $form_state->getValue('wistia_token'))
       ->set('wistia_project_id', $form_state->getValue('wistia_project_id'))
+      ->set('cloudinary_cloud_name', $form_state->getValue('cloudinary_cloud_name'))
+      ->set('cloudinary_upload_preset', $form_state->getValue('cloudinary_upload_preset'))
       ->save();
   }
 

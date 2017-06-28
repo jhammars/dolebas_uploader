@@ -28,3 +28,9 @@ wistia-views-field:
       attributes:
         async: true
     js/wistia-views-field.js: {}
+
+cloudinary-views-field:
+  js:
+    //widget.cloudinary.com/global/all.js:
+      type: external
+    js/cloudinary-views-field.js: {}

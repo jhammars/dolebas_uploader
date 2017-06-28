@@ -5,12 +5,20 @@
  */
 function dolebas_uploader_views_data_alter(array &$data) {
 
-  $data['node']['dolebas_uploader_wistia_field'] = array(
-    'title' => t('Dolebas Wistia Upload Field'),
+  $data['node']['wistia_views_field'] = array(
+    'title' => t('Dolebas Wistia Upload Widget'),
     'field' => array(
-      'title' => t('Dolebas Wistia Upload Field'),
+      'title' => t('Dolebas Wistia Upload Widget'),
       'help' => t('A widget for drag-and-drop uploading of videos to Wistia.'),
-      'id' => 'dolebas_uploader_wistia_field',
+      'id' => 'wistia_views_field',
+    ),
+  );
+  $data['node']['cloudinary_views_field'] = array(
+    'title' => t('Dolebas Cloudinary Upload Widget'),
+    'field' => array(
+      'title' => t('Dolebas Cloudinary Upload Widget'),
+      'help' => t('A widget for drag-and-drop uploading of imagages to Cloudinary.'),
+      'id' => 'cloudinary_views_field',
     ),
   );
 }

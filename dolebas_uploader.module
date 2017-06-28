@@ -40,5 +40,9 @@ function dolebas_uploader_theme() {
       'template' => 'wistia_views_field',
       'render element' => 'children',
     ],
+     'cloudinary_views_field' => [
+       'template' => 'cloudinary_views_field',
+       'render element' => 'children',
+     ],
   ];
 }

@@ -18,9 +18,10 @@ class CloudinaryUploaderBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $config = \Drupal::config('dolebas_uploader.cloudinarysettings');
-    $cloud_name = $config->get('cloud_name');
-    $upload_preset = $config->get('upload_preset');
+//    $config = \Drupal::config('dolebas_uploader.cloudinarysettings');
+    $config = \Drupal::config('dolebas_uploader.settings');
+    $cloud_name = $config->get('cloudinary_cloud_name');
+    $upload_preset = $config->get('cloudinary_upload_preset');
 
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node) {
