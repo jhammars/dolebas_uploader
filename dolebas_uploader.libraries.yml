@@ -11,8 +11,20 @@ dolebas-library:
       attributes:
         async: true
     js/wistia-upload-widget.js: {}
+
 cloudinary-library:
   js:
     //widget.cloudinary.com/global/all.js:
       type: external
     js/cloudinary-upload-widget.js: {}
+
+wistia-views-field:
+  css:
+    theme:
+      css/wistia-views-field.css: {}
+  js:
+    //fast.wistia.com/assets/external/api.js:
+      type: external
+      attributes:
+        async: true
+    js/wistia-views-field.js: {}
