@@ -3,7 +3,8 @@ type: module
 description: Dolebas Upoader
 core: 8.x
 package: Dolebas
-configure: dolebas_uploader.settings_form
+dependencies:
+  - dolebas_config:dolebas_config
 #libraries:
 #  - dolebas_uploader/dolebas-library
 

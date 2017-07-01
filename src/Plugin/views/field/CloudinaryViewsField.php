@@ -40,12 +40,12 @@ class CloudinaryViewsField extends FieldPluginBase {
       $nid = NULL;
     }
 
-    $config = \Drupal::config('dolebas_uploader.settings');
+    $config = \Drupal::config('dolebas_config.config');
     $cloud_name = $config->get('cloudinary_cloud_name');
     $upload_preset = $config->get('cloudinary_upload_preset');
 
-    $element['cloudinary_upload_widget']  = [
-      // '#type' => 'inline_template',
+    $element['cloudinary_views_field']  = [
+      '#type' => 'inline_template',
       '#theme' => 'cloudinary_views_field',
       '#attached' => array(
         'library' => array(
@@ -58,7 +58,7 @@ class CloudinaryViewsField extends FieldPluginBase {
         )        
       )
     ];
-    $element['#cache']['max-age'] = 0;
+    //$element['#cache']['max-age'] = 0;
 
     return $element;
 

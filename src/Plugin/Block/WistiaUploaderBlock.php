@@ -57,7 +57,7 @@ class WistiaUploaderBlock extends BlockBase implements ContainerFactoryPluginInt
    * {@inheritdoc}
    */
   public function build() {
-    $config = \Drupal::config('wistia_video_field.wistiasettings');
+    $config = \Drupal::config('dolebas_config.config');
     $token = $config->get('wistia_token');
     $project_id = $config->get('wistia_project_id');
 

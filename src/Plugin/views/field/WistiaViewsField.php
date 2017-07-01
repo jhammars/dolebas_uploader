@@ -39,7 +39,7 @@ class WistiaViewsField extends FieldPluginBase {
       $nid = NULL;
     }
 
-    $config = \Drupal::config('dolebas_uploader.settings');
+    $config = \Drupal::config('dolebas_config.config');
     $token = $config->get('wistia_token');
     $project_id = $config->get('wistia_project_id');
 
