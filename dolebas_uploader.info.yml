@@ -1,6 +1,6 @@
 name: Dolebas Upoader
 type: module
-description: Dolebas Upoader
+description: Takes care of uploading
 core: 8.x
 package: Dolebas
 dependencies:
