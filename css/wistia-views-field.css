@@ -1,8 +1,11 @@
 .wistia_upload_drop_zone {
     background: rgba(0, 0, 0, 0.06);
-    border: 10px dashed #b3b3b3;
+    border: 5px dashed #b3b3b3;
     position: relative;
-    text-align: center
+    height:200px;
+    width:200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .wistia_upload_drop_zone.wistia_preview_visible {
@@ -21,7 +24,7 @@
     background: rgba(0, 0, 0, 0.06);
     display: none;
     height: 100%;
-    left: 0;
+    left: 50%;
     position: absolute;
     top: 0;
     width: 100%
@@ -33,7 +36,7 @@
 
 .wistia_upload_preview {
     height: 100%;
-    left: 0;
+    left: 50%;
     position: absolute;
     top: 0;
     width: 100%
@@ -142,7 +145,7 @@
 .wistia_upload_bar {
     background-color: #2659aa;
     height: 100%;
-    left: 0;
+    left: 50%;
     position: absolute;
     top: 0;
     transition: width 200ms;
