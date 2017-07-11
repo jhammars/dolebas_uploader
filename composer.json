@@ -1,4 +1,8 @@
 {
     "name": "dolebas/dolebas_uploader",
-    "type": "drupal-custom-module"
+    "type": "drupal-custom-module",
+    "require": {
+        "dolebas/dolebas_config": "*",
+        "drupal/jsonapi": "*"
+    }
 }
