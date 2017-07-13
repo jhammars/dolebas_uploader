@@ -3,8 +3,6 @@ dolebas-library:
     theme:
       //fast.wistia.com/assets/external/uploader.css:
         type: external
-    hide:
-      css/wistia-video-field-css.css: {}
   js:
     //fast.wistia.com/assets/external/api.js:
       type: external
