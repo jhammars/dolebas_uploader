@@ -7,22 +7,6 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 
-///**
-// * Implements hook_help().
-// */
-//function dolebas_uploader_help($route_name, RouteMatchInterface $route_match) {
-//  switch ($route_name) {
-//    // Main module help for the dolebas_uploader module.
-//    case 'help.page.dolebas_uploader':
-//      $output = '';
-//      $output .= '<h3>' . t('About') . '</h3>';
-//      $output .= '<p>' . t('Wistia Video Field') . '</p>';
-//      return $output;
-//
-//    default:
-//  }
-//}
-
 /**
  * Implements hook_theme().
  */

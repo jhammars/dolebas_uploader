@@ -1,8 +1,0 @@
-name: Wistia Video Field
-type: module
-description: Wistia Video Field
-core: 8.x
-package: Custom
-configure: wistia_video_field.wistia_settings_form
-libraries:
-  - wistia_video_field/wistia-library
