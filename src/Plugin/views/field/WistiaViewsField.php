@@ -31,13 +31,7 @@ class WistiaViewsField extends FieldPluginBase {
    */
   public function render(ResultRow $values) {
 
-    $viewnid = strip_tags($this->view->field['nid']->original_value);
-    if ($viewnid) {
-      $nid = $viewnid;
-    }
-    else {
-      $nid = NULL;
-    }
+    $view_uuid = strip_tags($this->view->field['uuid']->original_value);
 
     $config = \Drupal::config('dolebas_config.config');
     $token = $config->get('wistia_token');
@@ -51,7 +45,7 @@ class WistiaViewsField extends FieldPluginBase {
           'dolebas_uploader/wistia-views-field'
         ),
         'drupalSettings' => array(
-          'nid' => $nid,
+          'uuid' => $view_uuid,
           'token' => $token,
           'project_id' => $project_id
         )

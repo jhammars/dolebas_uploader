@@ -17,7 +17,7 @@ jQuery(function () {
     jQuery('#cloudinary_views_field').cloudinary_upload_widget({
         cloud_name: drupalSettings.cloud_name,
         upload_preset: drupalSettings.upload_preset,
-        public_id: drupalSettings.nid
+        public_id: drupalSettings.uuid
     },
         function(error, result) { console.log(error, result)
     });

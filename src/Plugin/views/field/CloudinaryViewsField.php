@@ -31,14 +31,7 @@ class CloudinaryViewsField extends FieldPluginBase {
    */
   public function render(ResultRow $values) {
 
-    $viewnid = strip_tags($this->view->field['nid']->original_value);
-
-    if ($viewnid) {
-      $nid = $viewnid;
-    }
-    else {
-      $nid = NULL;
-    }
+    $uuid = strip_tags($this->view->field['uuid']->original_value);
 
     $config = \Drupal::config('dolebas_config.config');
     $cloud_name = $config->get('cloudinary_cloud_name');
@@ -54,7 +47,7 @@ class CloudinaryViewsField extends FieldPluginBase {
          'drupalSettings' => array(
            'cloud_name' => $cloud_name,
            'upload_preset' => $upload_preset,
-           'nid' => $nid,
+           'uuid' => $uuid
         )        
       )
     ];

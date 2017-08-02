@@ -28,7 +28,7 @@ jQuery(function () {
             dropIn: "wistia_uploader",
             projectId: drupalSettings.project_id,
             beforeUpload: function() {
-                wistiaUploader.setFileName(drupalSettings.nid);
+                wistiaUploader.setFileName(drupalSettings.uuid);
             }
         });
         wistiaUploader.bind("uploadsuccess", function(file, media) {
