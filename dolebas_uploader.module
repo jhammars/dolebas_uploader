@@ -12,14 +12,6 @@ use Drupal\Core\Routing\RouteMatchInterface;
  */
 function dolebas_uploader_theme() {
   return [
-    'dolebas_uploader' => [
-      'template' => 'dolebas_uploader',
-      'render element' => 'children',
-    ],
-    'cloudinary_uploader' => [
-      'template' => 'cloudinary_uploader',
-      'render element' => 'children',
-    ],
     'wistia_views_field' => [
       'template' => 'wistia_views_field',
       'render element' => 'children',

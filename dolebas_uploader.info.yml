@@ -5,6 +5,3 @@ core: 8.x
 package: Dolebas
 dependencies:
   - dolebas_config:dolebas_config
-#libraries:
-#  - dolebas_uploader/dolebas-library
-

@@ -1,21 +1,3 @@
-dolebas-library:
-  css:
-    theme:
-      //fast.wistia.com/assets/external/uploader.css:
-        type: external
-  js:
-    //fast.wistia.com/assets/external/api.js:
-      type: external
-      attributes:
-        async: true
-    js/wistia-upload-widget.js: {}
-
-cloudinary-library:
-  js:
-    //widget.cloudinary.com/global/all.js:
-      type: external
-    js/cloudinary-upload-widget.js: {}
-
 wistia-views-field:
   css:
     theme:
