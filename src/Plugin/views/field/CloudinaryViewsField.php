@@ -40,6 +40,7 @@ class CloudinaryViewsField extends FieldPluginBase {
     $element['cloudinary_views_field']  = [
       '#type' => 'inline_template',
       '#theme' => 'cloudinary_views_field',
+      '#div_uuid' => $uuid,
       '#attached' => array(
         'library' => array(
           'dolebas_uploader/cloudinary-views-field'
@@ -47,7 +48,8 @@ class CloudinaryViewsField extends FieldPluginBase {
          'drupalSettings' => array(
            'cloud_name' => $cloud_name,
            'upload_preset' => $upload_preset,
-           'uuid' => $uuid
+           'uuid' => $uuid,
+           'div_uuid' => $uuid
         )        
       )
     ];

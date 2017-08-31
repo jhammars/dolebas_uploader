@@ -40,6 +40,7 @@ class WistiaViewsField extends FieldPluginBase {
     $element['wistia']  = [
       '#type' => 'inline_template',
       '#theme' => 'wistia_views_field',
+      '#div_uuid' => $view_uuid,
       '#attached' => array(
         'library' => array(
           'dolebas_uploader/wistia-views-field'
@@ -47,7 +48,8 @@ class WistiaViewsField extends FieldPluginBase {
         'drupalSettings' => array(
           'uuid' => $view_uuid,
           'token' => $token,
-          'project_id' => $project_id
+          'project_id' => $project_id,
+          'div_uuid' => $view_uuid
         )
       )
     ];

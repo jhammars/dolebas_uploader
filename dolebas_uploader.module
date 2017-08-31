@@ -12,13 +12,19 @@ use Drupal\Core\Routing\RouteMatchInterface;
  */
 function dolebas_uploader_theme() {
   return [
-    'wistia_views_field' => [
-      'template' => 'wistia_views_field',
-      'render element' => 'children',
-    ],
-     'cloudinary_views_field' => [
-       'template' => 'cloudinary_views_field',
-       'render element' => 'children',
-     ],
+    'wistia_views_field' => array(
+        'template' => 'wistia_views_field',
+        'render element' => 'children',
+        'variables' => array(
+            'div_uuid' => NULL
+        )        
+    ),
+    'cloudinary_views_field' => array(
+        'template' => 'cloudinary_views_field',
+        'render element' => 'children',
+        'variables' => array(
+            'div_uuid' => NULL
+        )  
+    ),
   ];
 }
