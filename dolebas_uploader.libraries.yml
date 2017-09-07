@@ -10,6 +10,9 @@ wistia-views-field:
     js/wistia-views-field.js: {}
 
 cloudinary-views-field:
+  css:
+    theme:
+      css/cloudinary-views-field.css: {}
   js:
     //widget.cloudinary.com/global/all.js:
       type: external
